@@ -1,15 +1,11 @@
 package models
 
-<<<<<<< HEAD
-import(
-	"github.com/jinzhu/gorm"
-	"github.com/federicopfund/go-bookstore/pkg/config"
-=======
+
+
 import (
 	"github.com/federicopfund/go-bookstore/pkg/config"
-	//"github.com/jinzhu/go-bookstore/pkg/config"
+	
 	"github.com/jinzhu/gorm"
->>>>>>> controler
 )
 
 var db *gorm.DB
@@ -25,7 +21,7 @@ func init(){
 	config.Connect()
 	db = config.GetDB()
 	db.AutoMigrate(&Book{})
-<<<<<<< HEAD
+
 }
 
 func (b *Book) CreateBook() *Book{
@@ -50,6 +46,4 @@ func DeleteBook(ID int64) Book{
 	var book Book
 	db.Where("ID=?", ID).Delete(book)
 	return book
-=======
->>>>>>> controler
 }
