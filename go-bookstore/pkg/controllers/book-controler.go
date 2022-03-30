@@ -1,15 +1,15 @@
 package controllers
 
 import(
+
 	"encoding/json"
 	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
-	"github.com/federicopfund/go-bookstore/pkg/utils"
-	"github.com/federicopfund/go-bookstore/pkg/models"
+	"github.com/akhil/go-bookstore/pkg/utils"
+	"github.com/akhil/go-bookstore/pkg/models"
 )
-
 var NewBook models.Book
 
 func GetBook(w http.ResponseWriter, r *http.Request){
