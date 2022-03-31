@@ -7,19 +7,19 @@ import(
 	"github.com/gorilla/mux"
 	"net/http"
 	"strconv"
-	"github.com/federicopfund/go-bookstore/pkg/utils"
-	"github.com/akhil/go-bookstore/pkg/models"
+	"github.com/federicopfund/go-bookstore/pkg/utils"// importar paquetes que estan en el Stock
+	"github.com/federicopfund/go-bookstore/pkg/models"
 )
 var NewBook models.Book
 
 func GetBook(w http.ResponseWriter, r *http.Request){
 	newBooks:=models.GetAllBooks()
-	res, _ :=json.Marshal(newBooks)
+	res, _ :=json.Marshal(newBooks)// Convertirlo a Json
 	w.Header().Set("Content-Type","pkglication/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write(res)
+	w.WriteHeader(http.StatusOK)// basicamennte dara un 200
+	w.Write(res)// enviar algo por Frontend
 }
-
+// Obtener un libro por ID
 func GetBookById(w http.ResponseWriter, r *http.Request){
 	vars := mux.Vars(r)
 	bookId := vars["bookId"]
@@ -28,12 +28,12 @@ func GetBookById(w http.ResponseWriter, r *http.Request){
 		fmt.Println("error while parsing")
 	}
 	bookDetails, _:= models.GetBookById(ID)
-	res, _ := json.Marshal(bookDetails)
+	res, _ := json.Marshal(bookDetails)// enviar Json como resultado
 	w.Header().Set("Content-Type","pkglication/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write(res)
+	w.WriteHeader(http.StatusOK)// estatus OK
+	w.Write(res) // enviamos la respuesta
 }
-
+//Escritor de respuesta 
 func CreateBook(w http.ResponseWriter, r *http.Request){
 	CreateBook := &models.Book{}
 	utils.ParseBody(r, CreateBook)
@@ -54,9 +54,9 @@ func DeleteBook(w http.ResponseWriter, r *http.Request){
 	res, _ := json.Marshal(book)
 	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusOK)
-	w.Write(res)
+	w.Write(res)// enviamos la respuesta ejem Posman
 }
-
+// actualizar el registro ya creado con c aplicaciones 
 func UpdateBook(w http.ResponseWriter, r *http.Request){
 	var updateBook = &models.Book{}
 	utils.ParseBody(r, updateBook)
@@ -66,17 +66,17 @@ func UpdateBook(w http.ResponseWriter, r *http.Request){
 	if err != nil {
 		fmt.Println("error while parsing")
 	}
-	bookDetails, db:=models.GetBookById(ID)
-	if updateBook.Name != ""{
+	bookDetails, db:=models.GetBookById(ID)// una ves crado actualizara el estado de book.
+	if updateBook.Name != ""{// si actualizar book no es igual a cadena vacia
 		bookDetails.Name = updateBook.Name
 	}
-	if updateBook.Author != ""{
+	if updateBook.Author != ""{// los mismo para el autor
 		bookDetails.Author = updateBook.Author
 	}
-	if updateBook.Publication != ""{
+	if updateBook.Publication != ""{// y con las publicaciones
 		bookDetails.Publication = updateBook.Publication
 	}
-	db.Save(&bookDetails)
+	db.Save(&bookDetails)// una vez actualizado lo guardamos en nuestra base de datos.
 	res, _ := json.Marshal(bookDetails)
 	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusOK)
