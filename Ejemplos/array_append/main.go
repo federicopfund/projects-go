@@ -36,6 +36,10 @@ func main() {
 	}
 	wg.Wait()
 	fmt.Println(count)
+	for i := range fibs(5) {
+		fmt.Printf("%d ", i)
+	}
+	fmt.Println()
 }
 
 
