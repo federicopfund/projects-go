@@ -1,8 +1,6 @@
 package controller
 
-import(
-	"Append_Controler"
-)
+
 
 func Append(items []int, i int) []int {
 	if len(items) == cap(items) { // No more space in underlying array
