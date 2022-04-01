@@ -1,4 +1,3 @@
-module Append_Controler
+module array_append
 
 go 1.18
-
