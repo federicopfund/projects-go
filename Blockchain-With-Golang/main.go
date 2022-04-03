@@ -34,14 +34,14 @@ type Book struct {
 	Title       string `json:"title"`
 	Author      string `json:"author"`
 	PublishDate string `json:"publish_date"`
-	ISBN        string `json:"isbn:`
+	ISBN        string `json:"isbn:"`
 }
 
 func (b *Block) generateHash() {
 	// get string val of the Data
 	bytes, _ := json.Marshal(b.Data)
 	// concatenate the dataset
-	data := string(b.Pos) + b.Timestamp + string(bytes) + b.PrevHash
+	data := string(rune(b.Pos)) + b.Timestamp + string(bytes) + b.PrevHash
 	hash := sha256.New()
 	hash.Write([]byte(data))
 	b.Hash = hex.EncodeToString(hash.Sum(nil))
