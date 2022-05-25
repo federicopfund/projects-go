@@ -1,15 +1,13 @@
-# projects-go
- Proyectos con go 
-* [Libros](#books)
- * [Libros de iniciación](#starter-books)
- * [Libros avanzados](#advanced-books)
- * [Desarrollo web](#web-development)
+### Proyectos con go 
+ * [Libros](#Libros)
+   * [Libros de iniciación](#Libros-de-iniciación)
+   * [Libros avanzados](#advanced-books)
+   * [Desarrollo web](#web-development)
 
 
-**Books**
+**Libros**
 
-**Libros de iniciación
-**
+**Libros de iniciación**
 
 ### [El pequeño libro de Go](https://www.openmymind.net/The-Little-Go-Book/) *Free*
 
@@ -19,7 +17,6 @@ Es más largo que los otros libritos, pero espero que aún capture ese pequeño 
 
 ### [Introducción a la programación en Go](http://www.golang-book.com/) *Free*
 
-<img src="http://www.golang-book.com/public/img/intro/cover.4194045234.png" width="120px"/>
 
 Este libro es una breve y concisa introducción a la programación de computadoras usando el lenguaje Go. Diseñado por Google, Go es un lenguaje de programación de propósito general con características modernas, sintaxis limpia y una biblioteca común robusta y bien documentada, lo que lo convierte en un lenguaje ideal para aprender como su primer lenguaje de programación.
 
