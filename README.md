@@ -5,6 +5,19 @@
    * [Desarrollo web](#web-development)
 
 
+```mermaid
+  graph TD;
+      A[Libros]--yes-->B((https://www.openmymind.net/The-Little-Go-Book/));
+      B--run-->C;
+      B-->D;
+       B-->F;
+        B-->G;
+         B-->H; B-->J;
+          B-->K;
+           B-->L;
+    
+```
+
 **Libros**
 
 **Libros de iniciación**
